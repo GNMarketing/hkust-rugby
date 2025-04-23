@@ -123,8 +123,14 @@
         color: white;
         text-decoration: none;
         padding: 10px 15px;
-        font-weight: 600;
+        font-weight: 900;
         transition: color 0.3s;
+        font-size: 1.4rem; /* augmente la taille du texte */
+    padding: 10px 15px; /* ajoute de l'espace autour du texte */
+    display: inline-block; /* permet de bien appliquer le padding */
+    font-weight: 900; /* rend le texte plus gras pour le rendre plus visible */
+    text-transform: uppercase; /* optionnel : met le texte en majuscules */
+    letter-spacing: 1px; /* espace légèrement les lettres */
     }
 
     .nav ul li a:hover {
@@ -138,89 +144,92 @@
         cursor: pointer;
     }
 
-    /* Hero Section */
-    .hero {
-        position: relative;
-        height: 100vh;
-        color: white;
-        display: flex;
-        align-items: center;
-        text-align: center;
-        overflow: hidden;
-    }
 
-    .hero-image {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        background-position: center;
-        filter: blur(4px);
-        z-index: -1;
-    }
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
 
+.hero-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 70%;
+    filter: blur(5px);
+    z-index: -2;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(2, 11, 35, 0.6);
+    z-index: -1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    margin-bottom: 2rem;
+}
+
+/* Ajustements responsive */
+@media (max-width: 768px) {
+    .hero-bg-image {
+        filter: blur(3px);
+        object-position: center 60%;
+    }
+    
     .hero-content {
-        position: relative;
-        z-index: 1;
-        width: 100%;
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 2rem;
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        padding: 1.5rem;
     }
-    /* Ajustements responsive */
-    @media (max-width: 768px) {
-        .hero-background {
-            filter: blur(3px);
-        }
-        .hero-content {
-            padding: 1rem;
-        }
-    }
-
+    
     .hero-content h1 {
-        font-size: 3.5rem;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        font-size: 2.5rem;
     }
-
+    
     .hero-content p {
-        font-size: 1.8rem;
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        font-size: 1.2rem;
     }
+}
 
-    @media (max-width: 768px) {
-        .hero-content h1 {
-            font-size: 2.5rem;
-        }
-        .hero-content p {
-            font-size: 1.2rem;
-        }
+@media (max-width: 480px) {
+    .hero-content {
+        padding: 1rem;
     }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+}
 
-    .hero-background {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-position: center 70%; 
-        background-image: url('../images/background.jpg');
-        background-size: cover;
-        filter: blur(5px);
-        z-index: -1;
-        /* Assombrir l'image */
-        &::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(2, 11, 35, 0.6); /* Couleur semi-transparente */
-        }
-    }
 
     /* About Section */
     .about-section {
@@ -1009,20 +1018,152 @@
 
 
 
+/* Ajouter/modifier dans votre CSS */
+.header {
+    position:relative;
+    width: 100%;
+    background: linear-gradient(135deg, 
+                rgba(2, 16, 49, 0.98) 0%, 
+                rgba(1, 8, 25, 0.98) 100%);
+                padding: 10px 10px;
+    color: white;
+    overflow:auto;
+    border-bottom: 1px solid rgba(224, 193, 104, 0.3);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-title {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero-title h1 {
+    font-size: 4.5rem;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    line-height: 1.1;
+    letter-spacing: 1px;
+}
+
+.hero-title p {
+    font-size: 2rem;
+    opacity: 0.9;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Logo plus grand */
+.logo {
+    width: 100px;
+    height: 100px;
+}
+
+.logo-text h1 {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+}
+
+.logo-text h2 {
+    font-size: 3rem;
+    margin: -8px 0;
+}
+
+.logo-text p {
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+
+/* Navigation améliorée */
+.nav ul li a {
+    font-size: 1.4rem;
+    padding: 12px 25px;
+}
+
+/* Version mobile */
+@media (max-width: 992px) {
     .header {
-        position:relative;
-        top: 0;
-        width: 100%;
-        z-index: 1000;
-        background: linear-gradient(135deg, 
-                    rgba(2, 16, 49, 0.98) 0%, 
-                    rgba(1, 8, 25, 0.98) 100%);
-        backdrop-filter: blur(8px);
-        box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
-        border-bottom: 1px solid rgba(224, 193, 104, 0.15);
-        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        padding: 15px 0;
+        padding: 20px 0 80px;
     }
+    
+    .hero-title h1 {
+        font-size: 3rem;
+    }
+    
+    .hero-title p {
+        font-size: 1.5rem;
+    }
+    
+    .logo {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .logo-text h1 {
+        font-size: 1.4rem;
+    }
+    
+    .logo-text h2 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 0 60px;
+    }
+    
+    .hero-title h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero-title p {
+        font-size: 1.2rem;
+    }
+    
+    .header-content {
+        margin-bottom: 50px;
+    }
+    
+    .logo {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .logo-text h1 {
+        font-size: 1.1rem;
+    }
+    
+    .logo-text h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-title p {
+        font-size: 1rem;
+    }
+    
+    .logo-text h2 {
+        font-size: 1.5rem;
+    }
+}
+
+
 
     .header.scrolled {
         padding: 8px 0;
@@ -1180,12 +1321,7 @@
             padding: 0 30px;
         }
 
-        .nav ul li a {
-            padding: 15px;
-            display: block;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 0;
-        }
+       
 
         .nav ul li a::before {
             display: none;
@@ -1423,3 +1559,4 @@
         margin-top: 10px;
     }
 }
+
