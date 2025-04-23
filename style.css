@@ -230,8 +230,6 @@
     }
 }
 
-<<<<<<< HEAD
-=======
     .hero-background {
         position: absolute;
         top: 0;
@@ -254,7 +252,6 @@
             background: rgba(2, 11, 35, 0.6); /* Couleur semi-transparente */
         }
     }
->>>>>>> 7963c74bea3c018500188cd2362c8a284d47cb7b
 
     /* About Section */
     .about-section {
@@ -1584,7 +1581,4 @@
         margin-top: 10px;
     }
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> 7963c74bea3c018500188cd2362c8a284d47cb7b
